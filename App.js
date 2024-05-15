@@ -1,20 +1,48 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Styles from './assets/Styles';
 
-export default function App() {
+import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
+
+/* ------------------------------------------------------------------------------------- */
+import { NavigationContainer } from '@react-navigation/native'; // Imports of navigation
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer'; // Drawer Navigator
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack'; // Stack Navigator
+const Drawer = createDrawerNavigator();
+const Stack = createNativeStackNavigator();
+/* ------------------------------------------------------------------------------------ */
+
+// IMPOT OF SCREENS
+import LoginScreen from '.components/Login/Index';
+
+function DrawerCuston(props) {
   return (
-    <View style={styles.container}>
-      <Text>Inova Hub Mobile em breve!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+      <DrawerItem
+        label="Fechar"
+        onPress={() => props.navigation.closeDrawer()}
+        style={{ backgroundColor: 'black', color: 'white', }}
+      />
+    </DrawerContentScrollView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+export default function App() {
+  return (
+    <NavigationContainer>
+        <Drawer.Navigator drawerContent={props => <DrawerCuston {...props} />}> 
+          <Drawer.Screen name="LoginScreen" component={LoginScreen} />
+        </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
+
+
+
