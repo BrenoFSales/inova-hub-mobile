@@ -19,6 +19,8 @@ const Stack = createNativeStackNavigator();
 
 // IMPOT OF SCREENS
 import Login from './components/Login/Index';
+import Cadastro from './components/Cadastro/Index';
+import Home from './components/Home/Index';
 
 function DrawerCuston(props) {
   return (
@@ -27,7 +29,7 @@ function DrawerCuston(props) {
       <DrawerItem
         label="Fechar"
         onPress={() => props.navigation.closeDrawer()}
-        style={{ backgroundColor: 'black', color: 'white', }}
+        style={{ backgroundColor: '#f79400', color: 'white', }}
       />
     </DrawerContentScrollView>
   );
@@ -39,7 +41,9 @@ export default function App() {
   return (
     <NavigationContainer>
         <Drawer.Navigator drawerContent={props => <DrawerCuston {...props} />}> 
-          <Drawer.Screen name="LoginScreen" component={Login} />
+          <Drawer.Screen name="Login" component={Login} />
+          <Drawer.Screen name="Cadastro" component={Cadastro} />
+          <Drawer.Screen name="Home" component={Home} />
         </Drawer.Navigator>
     </NavigationContainer>
   );

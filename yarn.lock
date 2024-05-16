@@ -820,10 +820,10 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@expo/cli@0.18.11":
-  version "0.18.11"
-  resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.18.11.tgz#338215d9aa0d11b0d943814580bf4b9c27f43971"
-  integrity sha512-2xIfvj5RnQbQqZdkYa9a7Roll1ywBER2omCUKdbJazRcJTkkN3HMv/jILztdZ2uKlcfIqPq4VTbKEhV/IkewYg==
+"@expo/cli@0.18.12":
+  version "0.18.12"
+  resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.18.12.tgz#86a7a218bba8f868d443a3350e570cd8e7d4c1ee"
+  integrity sha512-rsN8DO3aU3sWFfl1mlIcLOFJUAYxG1U0XalEwQaT7ZkVT+9G70PqEjuraCm/vKc4aOnJ5wsecaHzQOvZywmGmg==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/code-signing-certificates" "0.0.5"
@@ -2972,10 +2972,10 @@ expo-font@~12.0.5:
   dependencies:
     fontfaceobserver "^2.1.0"
 
-expo-keep-awake@~13.0.1:
-  version "13.0.1"
-  resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-13.0.1.tgz#6c0a0d1fe388fe5a63e2089ade66798eba23f089"
-  integrity sha512-Kqv8Bf1f5Jp7YMUgTTyKR9GatgHJuAcC8vVWDEkgVhB3O7L3pgBy5MMSMUhkTmRRV6L8TZe/rDmjiBoVS/soFA==
+expo-keep-awake@~13.0.2:
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-13.0.2.tgz#5ef31311a339671eec9921b934fdd90ab9652b0e"
+  integrity sha512-kKiwkVg/bY0AJ5q1Pxnm/GvpeB6hbNJhcFsoOWDh2NlpibhCLaHL826KHUM+WsnJRbVRxJ+K9vbPRHEMvFpVyw==
 
 expo-linear-gradient@~13.0.2:
   version "13.0.2"
@@ -2993,10 +2993,10 @@ expo-modules-autolinking@1.11.1:
     find-up "^5.0.0"
     fs-extra "^9.1.0"
 
-expo-modules-core@1.12.10:
-  version "1.12.10"
-  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.12.10.tgz#44c5510e8fa16936c48fa986b3a3429c207381be"
-  integrity sha512-aS4imfr7fuUtcx+j/CHuG6ohNSThyCzGRh1kKjQTDcO0/CqDO2cSFnxf7n2vpiRFgyoMFJvFFtW/zIzVXiC2Tw==
+expo-modules-core@1.12.11:
+  version "1.12.11"
+  resolved "https://registry.yarnpkg.com/expo-modules-core/-/expo-modules-core-1.12.11.tgz#71d7efb2f6a2a4d3b96defad52fc799b9804f829"
+  integrity sha512-CF5G6hZo/6uIUz6tj4dNRlvE5L4lakYukXPqz5ZHQ+6fLk1NQVZbRdpHjMkxO/QSBQcKUzG/ngeytpoJus7poQ==
   dependencies:
     invariant "^2.2.4"
 
@@ -3005,13 +3005,13 @@ expo-status-bar@~1.12.1:
   resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.12.1.tgz#52ce594aab5064a0511d14375364d718ab78aa66"
   integrity sha512-/t3xdbS8KB0prj5KG5w7z+wZPFlPtkgs95BsmrP/E7Q0xHXTcDcQ6Cu2FkFuRM+PKTb17cJDnLkawyS5vDLxMA==
 
-expo@^51.0.5:
-  version "51.0.5"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-51.0.5.tgz#f39f7dc6d389f893f29c739ad4c8657aa9dea64d"
-  integrity sha512-i+AfkfToYPFCobX0NUT9PmDtsB3L19vhCB/XUE1Ph6FVrBF6GipkHzTADuRLMaVg5u/2sm/fdzGzBcMjXSHqmA==
+expo@~51.0.7:
+  version "51.0.7"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-51.0.7.tgz#163cd26980775a7395ed6f6d594dfc6d66c41480"
+  integrity sha512-3KYWrl5dYmwxf+a0RaSgh0wuVc0tuYyC/o2FMtGRIE3j0O38okP5Ctw/ysTM/Z1RTQziDsgwhHPKV6BnUs0tUQ==
   dependencies:
     "@babel/runtime" "^7.20.0"
-    "@expo/cli" "0.18.11"
+    "@expo/cli" "0.18.12"
     "@expo/config" "9.0.1"
     "@expo/config-plugins" "8.0.4"
     "@expo/metro-config" "0.18.3"
@@ -3020,9 +3020,9 @@ expo@^51.0.5:
     expo-asset "~10.0.6"
     expo-file-system "~17.0.1"
     expo-font "~12.0.5"
-    expo-keep-awake "~13.0.1"
+    expo-keep-awake "~13.0.2"
     expo-modules-autolinking "1.11.1"
-    expo-modules-core "1.12.10"
+    expo-modules-core "1.12.11"
     fbemitter "^3.0.0"
     whatwg-url-without-unicode "8.0.0-3"
 
@@ -5215,10 +5215,10 @@ react-native-gesture-handler@^2.16.2:
     lodash "^4.17.21"
     prop-types "^15.7.2"
 
-react-native-reanimated@^3.11.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.11.0.tgz#d4265d4e0232623f5958ed60e1686ca884fc3452"
-  integrity sha512-BNw/XDgUfs8UhfY1X6IniU8kWpnotWGyt8qmQviaHisTi5lvwnaOdXQKfN1KGONx6ekdFRHRP5EFwLi0UajwKA==
+react-native-reanimated@~3.10.1:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-3.10.1.tgz#3c37d1100bbba0065df39c96aab0c1ff1b50c0fa"
+  integrity sha512-sfxg6vYphrDc/g4jf/7iJ7NRi+26z2+BszPmvmk0Vnrz6FL7HYljJqTf531F1x6tFmsf+FEAmuCtTUIXFLVo9w==
   dependencies:
     "@babel/plugin-transform-arrow-functions" "^7.0.0-0"
     "@babel/plugin-transform-nullish-coalescing-operator" "^7.0.0-0"

@@ -15,8 +15,11 @@ export default StyleSheet.create({
   },
 
   logo: {
-    marginTop: 60,
-    marginBottom: 60
+    marginTop: 20,
+    marginBottom: 30,
+
+    width: 230,
+    resizeMode: 'contain',
   },
 
   viewInputs:{
@@ -46,7 +49,7 @@ export default StyleSheet.create({
     backgroundColor: '#0047FF',
     borderRadius: 10,
     padding: 10,
-    marginTop: 20,
+    marginTop: 40,
     width: '70%',
     alignItems: 'center'
   }

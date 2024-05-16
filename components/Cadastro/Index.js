@@ -3,7 +3,7 @@ import Styles from './Styles';
 
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
 
-export default function Login({ navigation }) {
+export default function Cadastro() {
   return (
     <View style={Styles.container}>
       <LinearGradient
@@ -17,22 +17,26 @@ export default function Login({ navigation }) {
       />
 
       <View style={Styles.viewInputs}>
-        <Text style={Styles.labelInput}>Login</Text>
+        <Text style={Styles.labelInput}>Nome</Text>
         <TextInput style={Styles.inputs}
-          placeholder="Usuário" />
+          placeholder="Nome" />
 
-        <Text style={Styles.labelInput}>Senha</Text>
+        <Text style={Styles.labelInput}>CPF</Text>
         <TextInput style={Styles.inputs}
-          placeholder="Senha" />
+          placeholder="CPF" />
 
-        <Text style={{ marginLeft: 10, color: '#0047FF'}}>Esqueceu a senha?</Text>
-        <Text style={{ marginLeft: 10}}>Primeira vez no Inova Hub?
-          <Text style={{ color: '#0047FF' }} onPress={() => navigation.navigate('Cadastro')}> Cadastre-se</Text>
-        </Text>
+        <Text style={Styles.labelInput}>E-mail</Text>
+        <TextInput style={Styles.inputs}
+          placeholder="E-mail" />
+
+        <Text style={Styles.labelInput}>Telefone</Text>
+        <TextInput style={Styles.inputs}
+          placeholder="Telefone" />
+
       </View>
 
-      <TouchableOpacity style={Styles.button} onPress={() => navigation.navigate('Home')}>
-        <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold'}}>Entrar</Text>
+      <TouchableOpacity style={Styles.button}>
+        <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold'}}>Cadastrar-se</Text>
       </TouchableOpacity>
     </View>
   );
