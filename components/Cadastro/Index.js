@@ -1,16 +1,24 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import Styles from './Styles';
 
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
 
-export default function Cadastro() {
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'; // Icons Biblioteca
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'; 
+
+export default function Cadastro({ navigation }) {
   return (
-    <View style={Styles.container}>
+    <SafeAreaView style={Styles.container}>
       <LinearGradient
         // Background Linear Gradient
         colors={['#FAC700', '#FF8A00']}
         style={Styles.background}
       />
+
+      <TouchableOpacity style={Styles.arrowBtn} onPress={() => navigation.navigate('Login')}>
+        <FontAwesomeIcon icon={faArrowLeft} size={40} color="white" />
+      </TouchableOpacity>
+
       <Image 
         source={require('../../assets/images/logo.png')}
         style={Styles.logo}
@@ -38,7 +46,7 @@ export default function Cadastro() {
       <TouchableOpacity style={Styles.button}>
         <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold'}}>Cadastrar-se</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 }
 

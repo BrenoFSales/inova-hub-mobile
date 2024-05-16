@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
 
   logo: {
-    marginTop: 20,
+    marginTop: 50,
     marginBottom: 30,
 
     width: 230,
@@ -52,6 +52,12 @@ export default StyleSheet.create({
     marginTop: 40,
     width: '70%',
     alignItems: 'center'
+  },
+
+  arrowBtn: {
+   position: 'absolute',
+   left: 20,
+   top: 90,
   }
 
 });

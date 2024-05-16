@@ -22,6 +22,8 @@ import Login from './components/Login/Index';
 import Cadastro from './components/Cadastro/Index';
 import Home from './components/Home/Index';
 
+
+
 function DrawerCuston(props) {
   return (
     <DrawerContentScrollView {...props}>
@@ -29,20 +31,19 @@ function DrawerCuston(props) {
       <DrawerItem
         label="Fechar"
         onPress={() => props.navigation.closeDrawer()}
-        style={{ backgroundColor: '#f79400', color: 'white', }}
+        style={{ backgroundColor: '#FD5671' }}
+        labelStyle={{ color: 'white', textAlign: 'center' }}
       />
     </DrawerContentScrollView>
   );
 }
 
-
-
 export default function App() {
   return (
     <NavigationContainer>
         <Drawer.Navigator drawerContent={props => <DrawerCuston {...props} />}> 
-          <Drawer.Screen name="Login" component={Login} />
-          <Drawer.Screen name="Cadastro" component={Cadastro} />
+          <Drawer.Screen name="Login" component={Login} options={{headerShown: false}}/>
+          <Drawer.Screen name="Cadastro" component={Cadastro} options={{headerShown: false}}/>
           <Drawer.Screen name="Home" component={Home} />
         </Drawer.Navigator>
     </NavigationContainer>

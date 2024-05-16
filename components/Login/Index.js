@@ -4,6 +4,11 @@ import Styles from './Styles';
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
 
 export default function Login({ navigation }) {
+
+  Login.navigationOptions = {
+    headerShown: false, // Oculta o cabeçalho
+  };
+
   return (
     <View style={Styles.container}>
       <LinearGradient
@@ -36,6 +41,7 @@ export default function Login({ navigation }) {
       </TouchableOpacity>
     </View>
   );
+
 }
 
 
