@@ -18,7 +18,7 @@ const Stack = createNativeStackNavigator();
 /* ------------------------------------------------------------------------------------ */
 
 // IMPOT OF SCREENS
-import LoginScreen from '.components/Login/Index';
+import Login from './components/Login/Index';
 
 function DrawerCuston(props) {
   return (
@@ -34,15 +34,14 @@ function DrawerCuston(props) {
 }
 
 
+
 export default function App() {
   return (
     <NavigationContainer>
         <Drawer.Navigator drawerContent={props => <DrawerCuston {...props} />}> 
-          <Drawer.Screen name="LoginScreen" component={LoginScreen} />
+          <Drawer.Screen name="LoginScreen" component={Login} />
         </Drawer.Navigator>
     </NavigationContainer>
   );
 }
-
-
 
