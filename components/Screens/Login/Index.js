@@ -17,7 +17,7 @@ export default function Login({ navigation }) {
         style={Styles.background}
       />
       <Image 
-        source={require('../../assets/images/logo.png')}
+        source={require('../../../assets/images/logo.png')}
         style={Styles.logo}
       />
 

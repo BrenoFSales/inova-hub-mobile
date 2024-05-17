@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
 
   logo: {
-    marginTop: 60,
+    marginTop: 140,
     marginBottom: 60
   },
 

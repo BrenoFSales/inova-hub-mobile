@@ -18,10 +18,13 @@ const Stack = createNativeStackNavigator();
 /* ------------------------------------------------------------------------------------ */
 
 // IMPOT OF SCREENS
-import Login from './components/Login/Index';
-import Cadastro from './components/Cadastro/Index';
-import Home from './components/Home/Index';
+import Login from './components/Screens/Login/Index';
+import Cadastro from './components/Screens/Cadastro/Index';
+import Home from './components/Screens/Home/Index';
+
+
 import CustomHeader from './components/CustomHeader/Index';
+
 
 
 function DrawerCuston(props) {
