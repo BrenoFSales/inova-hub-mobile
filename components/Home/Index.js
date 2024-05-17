@@ -1,9 +1,11 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import Styles from './Styles';
+
 
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
 
-export default function Home() {
+export default function Home({ navigation }) {
+
   return (
     <View style={Styles.container}>
       <LinearGradient
@@ -11,7 +13,7 @@ export default function Home() {
         colors={['#FAC700', '#FF8A00']}
         style={Styles.background}
       />
-        <Text>Home Screen</Text>   
+        <Text>Home Screen</Text>  
     </View>
   );
 }

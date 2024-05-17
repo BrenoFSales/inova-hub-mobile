@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import Styles from './assets/Styles';
 
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
@@ -21,18 +21,24 @@ const Stack = createNativeStackNavigator();
 import Login from './components/Login/Index';
 import Cadastro from './components/Cadastro/Index';
 import Home from './components/Home/Index';
-
+import CustomHeader from './components/CustomHeader/Index';
 
 
 function DrawerCuston(props) {
   return (
     <DrawerContentScrollView {...props}>
+      <View style={Styles.drawerHeader}>
+        <Image 
+          source={require('./assets/images/logo.png')}
+          style={Styles.logo}
+        />
+      </View>
       <DrawerItemList {...props} />
       <DrawerItem
         label="Fechar"
         onPress={() => props.navigation.closeDrawer()}
         style={{ backgroundColor: '#FD5671' }}
-        labelStyle={{ color: 'white', textAlign: 'center' }}
+        labelStyle={{ color: 'white', textAlign: 'center',fontWeight: 'bold'}}
       />
     </DrawerContentScrollView>
   );
@@ -41,7 +47,13 @@ function DrawerCuston(props) {
 export default function App() {
   return (
     <NavigationContainer>
-        <Drawer.Navigator drawerContent={props => <DrawerCuston {...props} />}> 
+        <Drawer.Navigator drawerContent={props => <DrawerCuston {...props} />}
+        screenOptions={({ route }) => ({
+          header: () => <CustomHeader title={route.name} />,
+          drawerPosition: 'right'
+        })
+        }
+        > 
           <Drawer.Screen name="Login" component={Login} options={{headerShown: false}}/>
           <Drawer.Screen name="Cadastro" component={Cadastro} options={{headerShown: false}}/>
           <Drawer.Screen name="Home" component={Home} />
@@ -49,4 +61,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
