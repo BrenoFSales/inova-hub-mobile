@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     card:{
-        marginTop: 50
+        marginTop: 40
     },
 
 });
