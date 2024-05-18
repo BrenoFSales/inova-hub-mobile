@@ -17,7 +17,7 @@ const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 /* ------------------------------------------------------------------------------------ */
 
-// IMPOT OF SCREENS
+// IMPORT OF SCREENS
 import Login from './components/Screens/Login/Index';
 import Cadastro from './components/Screens/Cadastro/Index';
 import Home from './components/Screens/Home/Index';
@@ -53,7 +53,7 @@ export default function App() {
         <Drawer.Navigator drawerContent={props => <DrawerCuston {...props} />}
         screenOptions={({ route }) => ({
           header: () => <CustomHeader title={route.name} />,
-          drawerPosition: 'right'
+          drawerPosition: 'right',
         })
         }
         > 

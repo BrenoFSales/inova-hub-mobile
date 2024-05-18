@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     drawerHeader: {
+        marginTop:-5,
         backgroundColor: 'orange',
         height: 100,
         alignItems: 'center',
