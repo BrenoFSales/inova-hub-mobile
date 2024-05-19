@@ -5,7 +5,8 @@ import Post from '../../Post/Index'
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
 import { IconButton } from 'react-native-paper';
 
-export default function Home({ navigation }) {
+export default function Perfil({ navigation }) {
+
 
   return (
     <View>
@@ -44,12 +45,12 @@ export default function Home({ navigation }) {
         
         </ScrollView>
         
-        <TouchableOpacity style={Styles.floatingBtn}>
+        <TouchableOpacity style={Styles.floatingBtn} onPress={() => navigation.navigate('New Post')}>
                 <IconButton
                     icon="plus"
                     size={60}
                 />
-            </TouchableOpacity>
+        </TouchableOpacity>
     </View>
   );
 }
