@@ -23,6 +23,8 @@ import Cadastro from './components/Screens/Cadastro/Index';
 import Home from './components/Screens/Home/Index';
 import Perfil from './components/Screens/Perfil/Index';
 import NewPost from './components/Screens/NewPost/Index';
+import Idiomas from './components/Screens/Idiomas/Index';
+import Dashboard from './components/Screens/Dashboard/Index';
 
 
 import CustomHeader from './components/CustomHeader/Index';
@@ -64,6 +66,8 @@ export default function App() {
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Perfil" component={Perfil} />
           <Drawer.Screen name="New Post" component={NewPost} />
+          <Drawer.Screen name="Idiomas" component={Idiomas} />
+          <Drawer.Screen name="Dashboard" component={Dashboard} />
         </Drawer.Navigator>
     </NavigationContainer>
   );
