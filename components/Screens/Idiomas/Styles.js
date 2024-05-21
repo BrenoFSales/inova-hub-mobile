@@ -46,7 +46,7 @@ export default StyleSheet.create({
   },
 
   button:{
-    backgroundColor: '#0047FF',
+    backgroundColor: '#FF9913',
     borderRadius: 10,
     padding: 10,
     marginTop: 40,
