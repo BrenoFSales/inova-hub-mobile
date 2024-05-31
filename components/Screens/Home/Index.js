@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient'; // Background linear grad
 export default function Home({ navigation }) {
 
   return (
-    <ScrollView style={Styles.container}>
+    <View style={Styles.container}>
       <LinearGradient
         // Background Linear Gradient
         colors={['#FAC700', '#FF8A00']}
@@ -24,7 +24,7 @@ export default function Home({ navigation }) {
 
       <Post/>
       
-    </ScrollView>
+    </View>
   );
 }
 

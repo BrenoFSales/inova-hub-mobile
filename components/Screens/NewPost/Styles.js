@@ -40,8 +40,8 @@ export default StyleSheet.create({
     },
     
       arrowBtn: {
-        marginBottom: 20,
-        marginTop: -40,
+        marginBottom: 40,
+        marginTop: -60,
         marginLeft: -250
       }
 

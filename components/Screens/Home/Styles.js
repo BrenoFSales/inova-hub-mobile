@@ -15,7 +15,8 @@ export default StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         backgroundColor: '#D9D9D9',
-        borderRadius: 20
+        borderRadius: 20,
+        marginBottom: 15,
     },
 
     comunidadesItens:{

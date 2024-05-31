@@ -29,6 +29,8 @@ import Dashboard from './components/Screens/Dashboard/Index';
 
 import CustomHeader from './components/CustomHeader/Index';
 
+import { PostsProvider } from './components/PostsContext/Index'; // Contexto para acessar o dataset e posts
+import { LoginsProvider } from './components/LoginContext/Index';
 
 
 function DrawerCuston(props) {
@@ -54,6 +56,8 @@ function DrawerCuston(props) {
 export default function App() {
   return (
     <NavigationContainer>
+      <LoginsProvider>
+      <PostsProvider>
         <Drawer.Navigator drawerContent={props => <DrawerCuston {...props} />}
         screenOptions={({ route }) => ({
           header: () => <CustomHeader title={route.name} />,
@@ -69,6 +73,8 @@ export default function App() {
           <Drawer.Screen name="Idiomas" component={Idiomas} />
           <Drawer.Screen name="Dashboard" component={Dashboard} />
         </Drawer.Navigator>
+      </PostsProvider>
+      </LoginsProvider>
     </NavigationContainer>
   );
 }

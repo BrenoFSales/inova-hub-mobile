@@ -1,13 +1,19 @@
+import React, { useContext, useState } from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import Styles from './Styles';
 
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
+import LoginContext from '../../LoginContext/Index';
 
 export default function Login({ navigation }) {
 
   Login.navigationOptions = {
     headerShown: false, // Oculta o cabeçalho
   };
+
+  const { logins, setLogins } = useContext(LoginContext);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <View style={Styles.container}>
@@ -24,11 +30,15 @@ export default function Login({ navigation }) {
       <View style={Styles.viewInputs}>
         <Text style={Styles.labelInput}>Login</Text>
         <TextInput style={Styles.inputs}
-          placeholder="Usuário" />
+          placeholder="Usuário" 
+          value={username}
+          onChangeText={setUsername} />
 
         <Text style={Styles.labelInput}>Senha</Text>
         <TextInput style={Styles.inputs}
-          placeholder="Senha" />
+          placeholder="Senha"
+          value={password}
+          onChangeText={setPassword} />
 
         <Text style={{ marginLeft: 10, color: '#0047FF'}}>Esqueceu a senha?</Text>
         <Text style={{ marginLeft: 10}}>Primeira vez no Inova Hub?
