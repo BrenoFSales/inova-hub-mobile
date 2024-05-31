@@ -26,6 +26,7 @@ import NewPost from './components/Screens/NewPost/Index';
 
 
 import CustomHeader from './components/CustomHeader/Index';
+import Idiomas from './components/Screens/Idiomas/Index';
 
 
 
@@ -64,6 +65,8 @@ export default function App() {
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Perfil" component={Perfil} />
           <Drawer.Screen name="New Post" component={NewPost} />
+          <Drawer.Screen name="Dashboard" component={Dashboard} />
+          <Drawer.Screen name="Idiomas" component={Idiomas} />
         </Drawer.Navigator>
     </NavigationContainer>
   );

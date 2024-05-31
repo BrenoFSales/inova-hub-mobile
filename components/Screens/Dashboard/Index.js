@@ -1,7 +1,7 @@
 import { SafeAreaView, Text, View, Image, TextInput, TouchableOpacity, Button } from 'react-native';
 import Styles from './Styles';
 
-const Dashboard = ({navigation}) => {
+export default function Dashboard({navigation}){
     return (
       <View style={styles.container}>
         <View style={styles.row}>
@@ -27,4 +27,4 @@ const Dashboard = ({navigation}) => {
     );
   };
 
-  export default Dashboard;
+  
