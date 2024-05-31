@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'; // Icons Biblioteca
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'; 
 
-export default function NewPos({ navigation }) {
+export default function NewPost({ navigation }) {
 
     const categorias = [
         {label: 'TI', value: 'ti'},
@@ -29,7 +29,7 @@ export default function NewPos({ navigation }) {
 
 
     const handleAddPost = () => {
-        addPost(title, description, image, categoria);
+        addPost(title, description, image, categoria,);
         navigation.navigate('Perfil'); // Volta para a tela anterior
       };
 

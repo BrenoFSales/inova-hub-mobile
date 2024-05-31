@@ -45,7 +45,7 @@ export default function Perfil({ navigation }) {
         
         </ScrollView>
         
-        <TouchableOpacity style={Styles.floatingBtn} onPress={() => navigation.navigate('New Post')}>
+        <TouchableOpacity style={Styles.floatingBtn} onPress={() => navigation.navigate('Novo Post')}>
                 <IconButton
                     icon="plus"
                     size={60}

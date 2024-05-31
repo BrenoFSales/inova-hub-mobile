@@ -53,7 +53,8 @@ export default function Cadastro({ navigation }) {
         <TextInput style={Styles.inputs}
           placeholder="CPF"
           value={cpf}
-          onChangeText={setCpf} />
+          onChangeText={setCpf}
+          keyboardType='numeric' />
 
         <Text style={Styles.labelInput}>E-mail</Text>
         <TextInput style={Styles.inputs}
@@ -61,11 +62,12 @@ export default function Cadastro({ navigation }) {
           value={email}
           onChangeText={setEmail} />
 
-        <Text style={Styles.labelInput}>Telefone</Text>
+        <Text style={Styles.labelInput}>Senha</Text>
         <TextInput style={Styles.inputs}
           placeholder="Senha"
           value={password}
-          onChangeText={setPassword} />
+          onChangeText={setPassword}
+          keyboardType='numeric' />
 
       </View>
 

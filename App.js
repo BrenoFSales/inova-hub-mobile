@@ -22,7 +22,7 @@ import Login from './components/Screens/Login/Index';
 import Cadastro from './components/Screens/Cadastro/Index';
 import Home from './components/Screens/Home/Index';
 import Perfil from './components/Screens/Perfil/Index';
-import NewPost from './components/Screens/NewPost/Index';
+import NovoPost from './components/Screens/NewPost/Index';
 import Idiomas from './components/Screens/Idiomas/Index';
 import Dashboard from './components/Screens/Dashboard/Index';
 
@@ -69,7 +69,7 @@ export default function App() {
           <Drawer.Screen name="Cadastro" component={Cadastro} options={{headerShown: false}}/>
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Perfil" component={Perfil} />
-          <Drawer.Screen name="New Post" component={NewPost} />
+          <Drawer.Screen name="Novo Post" component={NovoPost} />
           <Drawer.Screen name="Idiomas" component={Idiomas} />
           <Drawer.Screen name="Dashboard" component={Dashboard} />
         </Drawer.Navigator>
