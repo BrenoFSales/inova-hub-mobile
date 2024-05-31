@@ -11,9 +11,25 @@ export default function Login({ navigation }) {
     headerShown: false, // Oculta o cabeçalho
   };
 
-  const { logins, setLogins } = useContext(LoginContext);
+
+  const { users } = useContext(LoginContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  // Função que verifica se o login existe no dataset do context
+  const verificacaoLogin = () => {
+    const login = users.find(u => u.username === username && u.password === password) ;
+
+    console.log(login);
+    if (login) {
+      navigation.navigate('Home');
+      console.log('Login successful!')
+    }
+
+    else {
+      alert('Usuário ou senha incorretos!')
+    }
+  }
 
   return (
     <View style={Styles.container}>
@@ -46,7 +62,7 @@ export default function Login({ navigation }) {
         </Text>
       </View>
 
-      <TouchableOpacity style={Styles.button} onPress={() => navigation.navigate('Home')}>
+      <TouchableOpacity style={Styles.button} onPress={verificacaoLogin}>
         <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold'}}>Entrar</Text>
       </TouchableOpacity>
     </View>

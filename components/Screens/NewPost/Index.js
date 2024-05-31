@@ -20,7 +20,6 @@ export default function NewPos({ navigation }) {
     ]
 
 
-    const { posts } = useContext(PostsContext);
     const { addPost } = useContext(PostsContext);
 
     const [title, setTitle] = useState('');
