@@ -12,6 +12,8 @@ export const LoginsProvider = ({ children }) => {
 
   ]);
 
+  const [currentLogin, setCurrentLogin] = useState(null); // Verifica o usuário o que está logado no momento
+
   const addLogin = (username, password, cpf, email) => {
     const newUser = {
       id: (users.length + 1).toString(), // Gera um ID simples
@@ -24,7 +26,7 @@ export const LoginsProvider = ({ children }) => {
   };
 
   return (
-    <LoginContext.Provider value={{ users, addLogin }}>
+    <LoginContext.Provider value={{ users, addLogin, currentLogin, setCurrentLogin }}>
       {children}
     </LoginContext.Provider>
   );

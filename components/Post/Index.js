@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, FlatList, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, Text, TouchableOpacity, Image } from 'react-native';
 import { Card, Title, Paragraph, Button, IconButton } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 
@@ -24,11 +24,13 @@ export default function Post() {
         setPosts(updatedPosts);
       };
 
+      
     const renderItem = ({ item }) => (
         <View>
             <Card style={Styles.card}>
                 <Card.Title title={item.title}/>
-                <Card.Cover source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg' }} />
+
+                <Card.Cover source={{ uri: item.image }} />
                 <Card.Content>
                     <Paragraph style={{marginVertical: 20}}>{item.description}</Paragraph>
                 </Card.Content>

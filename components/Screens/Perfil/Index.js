@@ -1,3 +1,4 @@
+import React, { useContext, useState } from 'react';
 import { ScrollView, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 import Styles from './Styles';
 import Post from '../../Post/Index'
@@ -5,8 +6,12 @@ import Post from '../../Post/Index'
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
 import { IconButton } from 'react-native-paper';
 
+import LoginContext from '../../LoginContext/Index';
+
 export default function Perfil({ navigation }) {
 
+  const { currentLogin } = useContext(LoginContext);
+  console.log(currentLogin, 'Logado no perfil');
 
   return (
     <View>
@@ -25,8 +30,11 @@ export default function Perfil({ navigation }) {
                             size={100}
                         />
                     </View>
-                    <Text>Nome do Usuário</Text>
                     <Text>Meus dados</Text>
+                    <Text>{currentLogin.username}</Text>
+                    <Text>{currentLogin.cpf}</Text>
+                    <Text>{currentLogin.email}</Text>
+
                 </View>
 
                 <View style={Styles.section}>

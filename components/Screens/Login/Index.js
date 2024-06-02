@@ -3,7 +3,9 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'reac
 import Styles from './Styles';
 
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
+
 import LoginContext from '../../LoginContext/Index';
+import { setCurrentLogin } from '../../LoginContext/Index';
 
 export default function Login({ navigation }) {
 
@@ -13,17 +15,20 @@ export default function Login({ navigation }) {
 
 
   const { users } = useContext(LoginContext);
+  const { setCurrentLogin } = useContext(LoginContext);
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   // Função que verifica se o login existe no dataset do context
   const verificacaoLogin = () => {
-    const login = users.find(u => u.username === username && u.password === password) ;
+    const login = users.find(u => u.username === username && u.password === password) ; // Verifica se os inputs do login existem no dataset do contexto
 
     console.log(login);
-    if (login) {
+    if (login) { // Se for encontrado ele navega para a home e printa no console os dados do usuário
       navigation.navigate('Home');
       console.log('Login successful!')
+      setCurrentLogin(login); // Seta no contexto Login um estado que guarda o usuário logado no momento
     }
 
     else {
