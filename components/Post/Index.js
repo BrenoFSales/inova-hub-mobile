@@ -1,27 +1,28 @@
 import React, { useContext } from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
 import { Card, Title, Paragraph, Button, IconButton } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
 
 import PostsContext from '../PostsContext/Index'; // Contexto para acessar o dataset de posts
 
 import Styles from './Styles';
 
 export default function Post() {
+    const navigation = useNavigation();
     const { posts } = useContext(PostsContext);
     const { setPosts } = useContext(PostsContext);
 
-    // FUNÇÃO PARA AUMENTAR A CONTAGEM EM CADA ITEM
-    const handleLikePress = (id) => {
-        setPosts(
-        posts.map( (item) => {
-            if(id === item.id) {
-            return(
-                {...item, like: item.like + 1}
-            )
-            }
-            else{return(item)}
-        })
-    )};
+    // FUNÇÃO PARA DAR UPVOTES EM CADA IDEIA USANDO ID
+    const handleLike = (postId) => {
+        const updatedPosts = posts.map(post => {
+          if (post.id === postId) {
+            const newLikes = post.liked ? post.likes - 1 : post.likes + 1;
+            return { ...post, likes: newLikes, liked: !post.liked };
+          }
+          return post;
+        });
+        setPosts(updatedPosts);
+      };
 
     const renderItem = ({ item }) => (
         <View>
@@ -31,8 +32,9 @@ export default function Post() {
                 <Card.Content>
                     <Paragraph style={{marginVertical: 20}}>{item.description}</Paragraph>
                 </Card.Content>
-                <Card.Actions>   
-                    <TouchableOpacity onPress={handleLikePress}>        
+
+                <Card.Actions> 
+                    <TouchableOpacity onPress={() => handleLike(item.id)}>        
                         <IconButton
                             icon="lightbulb-outline"
                             size={20}
@@ -40,13 +42,17 @@ export default function Post() {
                             containerColor='orange'
                         />
                     </TouchableOpacity>  
-                    <Text style={Styles.upVote}>{ item.like }</Text>
-                    <IconButton
-                        icon="comment"
-                        size={20}
-                        iconColor='white'
-                        containerColor='orange'
-                    />
+                    <Text style={Styles.upVote}>{ item.likes }</Text>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Comentarios', { postId: item.id, comments: item.comments })}>  
+                        <IconButton
+                            icon="comment"
+                            size={20}
+                            iconColor='white'
+                            containerColor='orange'
+                        />
+                    </TouchableOpacity> 
+
                     <IconButton
                         icon="share"
                         size={20}
@@ -62,7 +68,7 @@ export default function Post() {
         <FlatList
             data={posts}
             renderItem={renderItem}
-            keyExtractor={(item) => item.id.toString()}
+            keyExtractor={item => item.id}
         /> 
     );
 }
