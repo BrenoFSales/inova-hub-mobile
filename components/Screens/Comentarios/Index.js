@@ -18,7 +18,7 @@ const CommentsScreen = ({ navigation, route }) => {
   );
 
   return (
-    <View>
+    <View style={Styles.container}>
       <TouchableOpacity style={Styles.arrowBtn} onPress={() => navigation.navigate('Home')}>
           <FontAwesomeIcon icon={faArrowLeft} size={40} color="orange" />
       </TouchableOpacity>

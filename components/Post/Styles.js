@@ -2,7 +2,13 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     card:{
-        marginTop: 50
+        marginTop: 50,
+        backgroundColor: '#F2F3F4'
+    },
+
+    cardTitle:{
+        fontSize: 25,
+        padding: 10
     },
 
     upVote:{

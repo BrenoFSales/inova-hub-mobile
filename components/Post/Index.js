@@ -28,7 +28,7 @@ export default function Post() {
     const renderItem = ({ item }) => (
         <View>
             <Card style={Styles.card}>
-                <Card.Title title={item.title}/>
+                <Text style={Styles.cardTitle}>{item.title}</Text>
 
                 <Card.Cover source={{ uri: item.image }} />
                 <Card.Content>

@@ -3,15 +3,12 @@ import Styles from './Styles';
 
 export default function Idiomas({navigation}){
     return(
-        <View>
-            <Text fontWeight="Bold" fontSize="18">Selecione o Idioma de preferência: {"\n"}</Text>
-                <Button style={Styles.button} title='Inglês' onPress={(0)}></Button>
-                    <Text></Text>
-                <Button style={Styles.button} title='Português' onPress={(0)}></Button> 
-                    <Text></Text>
-                <Button style={Styles.button} title='Espanhol' onPress={(0)}></Button>  
-                    <Text></Text>  
-                <Button style={Styles.button} title='Japonês' onPress={(0)}></Button>     
+        <View style={Styles.container}>
+            <Text style={Styles.title}>Selecione o Idioma de preferência: {"\n"}</Text>
+                <TouchableOpacity style={Styles.button} onPress={(0)}><Text style={Styles.textBtn}>Inglês</Text></TouchableOpacity>
+                <TouchableOpacity style={Styles.button} onPress={(0)}><Text style={Styles.textBtn}>Portugês</Text></TouchableOpacity>
+                <TouchableOpacity style={Styles.button} onPress={(0)}><Text style={Styles.textBtn}>Espanhol</Text></TouchableOpacity> 
+                <TouchableOpacity style={Styles.button} onPress={(0)}><Text style={Styles.textBtn}>Japonês</Text></TouchableOpacity>     
         </View>
     )
 }
