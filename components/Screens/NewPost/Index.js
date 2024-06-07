@@ -4,6 +4,7 @@ import RNPickerSelect from 'react-native-picker-select'
 import {useState, useContext} from 'react';
 
 import PostsContext from '../../PostsContext/Index'; // Contexto para acessar o dataset de posts
+import LoginContext from '../../LoginContext/Index'; // Verificar o usuário que está criando a Ideia
 
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -19,6 +20,9 @@ export default function NewPost({ navigation }) {
         {label: 'Ambiental', value: 'ambiental'},
     ]
 
+    const { currentLogin } = useContext(LoginContext);
+    console.log(currentLogin, 'Criou Nova ideia:');
+    let idUser = currentLogin.id;
 
     const { addPost } = useContext(PostsContext);
 
@@ -29,7 +33,7 @@ export default function NewPost({ navigation }) {
 
 
     const handleAddPost = () => {
-        addPost(title, description, image, categoria,);
+        addPost(idUser, title, description, image, categoria,);
         navigation.navigate('Perfil'); // Volta para a tela anterior
       };
 

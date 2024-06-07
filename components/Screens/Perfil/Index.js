@@ -1,17 +1,79 @@
 import React, { useContext, useState } from 'react';
-import { ScrollView, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, View, Image, FlatList, TouchableOpacity } from 'react-native';
 import Styles from './Styles';
 import Post from '../../Post/Index'
 
 import { LinearGradient } from 'expo-linear-gradient'; // Background linear gradient
-import { IconButton } from 'react-native-paper';
+import { Card, Title, Paragraph, Button, IconButton } from 'react-native-paper';
 
-import LoginContext from '../../LoginContext/Index';
+import LoginContext from '../../LoginContext/Index'; // Contexto para verificar qual usuário está logado
+import PostsContext from '../../PostsContext/Index'; // Contexto para acessar o dataset de posts
 
 export default function Perfil({ navigation }) {
 
   const { currentLogin } = useContext(LoginContext);
   console.log(currentLogin, 'Logado no perfil');
+
+  const { posts } = useContext(PostsContext);
+  const { setPosts } = useContext(PostsContext);
+
+  // FUNÇÃO PARA DAR UPVOTES EM CADA IDEIA USANDO ID
+  const handleLike = (postId) => {
+    const updatedPosts = posts.map(post => {
+      if (post.id === postId) {
+        const newLikes = post.liked ? post.likes - 1 : post.likes + 1;
+        return { ...post, likes: newLikes, liked: !post.liked };
+      }
+      return post;
+    });
+    setPosts(updatedPosts);
+  };
+
+  const renderItem = ({ item }) => {
+    if (item.idUser == currentLogin.id){
+        return (
+            <View>
+            <Card style={Styles.card}>
+                <Text style={Styles.cardTitle}>{item.title}</Text>
+
+                <Card.Cover source={{ uri: item.image }} />
+                <Card.Content>
+                    <Paragraph style={{marginVertical: 20}}>{item.description}</Paragraph>
+                </Card.Content>
+
+                <Card.Actions> 
+                    <TouchableOpacity onPress={() => handleLike(item.id)}>        
+                        <IconButton
+                            icon="lightbulb-outline"
+                            size={20}
+                            iconColor='white'
+                            containerColor='orange'
+                        />
+                    </TouchableOpacity>  
+                    <Text style={Styles.upVote}>{ item.likes }</Text>
+
+                    <TouchableOpacity onPress={() => navigation.navigate('Comentarios', { postId: item.id, comments: item.comments })}>  
+                        <IconButton
+                            icon="comment"
+                            size={20}
+                            iconColor='white'
+                            containerColor='orange'
+                        />
+                    </TouchableOpacity> 
+
+                    <IconButton
+                        icon="share"
+                        size={20}
+                        iconColor='white'
+                        containerColor='orange'
+                    />
+                </Card.Actions>
+            </Card>
+        </View>
+        )
+    }
+  };
+
 
   return (
     <View>
@@ -49,7 +111,11 @@ export default function Perfil({ navigation }) {
 
             <Text style={{fontSize: 30, textAlign: 'center', marginTop: 20}}>Minhas Ideias</Text>
 
-            <Post/>
+            <FlatList
+            data={posts}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+            /> 
         
         </ScrollView>
         
