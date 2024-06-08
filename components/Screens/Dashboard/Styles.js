@@ -42,9 +42,16 @@ export default StyleSheet.create({
         // Adicione uma sombra no Android
         elevation: 2,
       },
+
       cardTitle: {
         fontSize: 18,
         fontWeight: 'bold',
+      },
+
+      cardInfo: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: 'orange'
       },
 
 });
