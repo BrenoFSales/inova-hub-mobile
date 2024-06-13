@@ -26,6 +26,7 @@ import NovoPost from './components/Screens/NewPost/Index';
 import Idiomas from './components/Screens/Idiomas/Index';
 import Dashboard from './components/Screens/Dashboard/Index';
 import Comentarios from './components/Screens/Comentarios/Index';
+import Ideia from './components/Screens/Ideia/Index';
 
 
 import CustomHeader from './components/CustomHeader/Index';
@@ -71,6 +72,7 @@ export default function App() {
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Perfil" component={Perfil} />
           <Drawer.Screen name="Novo Post" component={NovoPost} />
+          <Drawer.Screen name="Ideia" component={Ideia} />
           <Drawer.Screen name="Comentarios" component={Comentarios} />
           <Drawer.Screen name="Idiomas" component={Idiomas} />
           <Drawer.Screen name="Dashboard" component={Dashboard} />

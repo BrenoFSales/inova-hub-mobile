@@ -28,7 +28,9 @@ export default function Post() {
     const renderItem = ({ item }) => (
         <View>
             <Card style={Styles.card}>
-                <Text style={Styles.cardTitle}>{item.title}</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Ideia', { post: item })}>  
+                    <Text style={Styles.cardTitle}>{item.title}</Text>
+                </TouchableOpacity> 
 
                 <Card.Cover source={{ uri: item.image }} />
                 <Card.Content>
