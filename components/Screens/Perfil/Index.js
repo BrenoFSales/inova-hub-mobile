@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { ScrollView, Text, View, Image, FlatList, TouchableOpacity } from 'react-native';
 import Styles from './Styles';
 import Post from '../../Post/Index'
