@@ -83,6 +83,20 @@ export default StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         textAlign: 'center'
+    },
+
+    noPostText:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: 'orange'
+    },
+
+    image:{
+        width: 150,
+        height: 150,
+        marginVertical: 15,
+        margin: 'auto'
     }
 
 });

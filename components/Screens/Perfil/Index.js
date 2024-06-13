@@ -17,6 +17,13 @@ export default function Perfil({ navigation }) {
   const { posts } = useContext(PostsContext);
   const { setPosts } = useContext(PostsContext);
 
+  const [userPosts, setUserPosts] = useState([]);
+
+  useEffect(() => {
+    const filteredPosts = posts.filter(post => post.idUser === currentLogin.id);
+    setUserPosts(filteredPosts);
+  }, [posts, currentLogin]);
+
   // FUNÇÃO PARA DAR UPVOTES EM CADA IDEIA USANDO ID
   const handleLike = (postId) => {
     const updatedPosts = posts.map(post => {
@@ -111,11 +118,18 @@ export default function Perfil({ navigation }) {
 
             <Text style={{fontSize: 30, textAlign: 'center', marginTop: 20}}>Minhas Ideias</Text>
 
+            {userPosts.length === 0 ? (
+            <View>
+                <Image source={{uri: 'https://cdn-icons-png.freepik.com/512/7487/7487066.png'}} style={Styles.image}/>
+                <Text style={Styles.noPostText}>Você ainda não tem ideias postadas</Text>
+            </View>
+            ) : (
             <FlatList
-            data={posts}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-            /> 
+                data={userPosts}
+                renderItem={renderItem}
+                keyExtractor={item => item.id}
+            />
+            )}
         
         </ScrollView>
         
